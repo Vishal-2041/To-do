@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro To-Do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <span class="brand-icon">✓</span>
+            <span class="brand-name">To Do</span>
+        </div>
+        
+        <div class="nav-menu">
+            <div class="nav-item active" data-view="myday">
+                <span class="icon">☀️</span> My Day
+            </div>
+            <div class="nav-item" data-view="important">
+                <span class="icon">⭐</span> Important
+            </div>
+            <div class="nav-item" data-view="planned">
+                <span class="icon">📅</span> Planned
+            </div>
+            <div class="nav-item" data-view="tasks">
+                <span class="icon">🏠</span> Tasks
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <h1 id="view-title">My Day</h1>
+            <p id="current-date"></p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-wrapper">
+                <span class="plus-icon">+</span>
+                <input type="text" id="task-input" placeholder="Add a task" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="task-list" id="task-list">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
