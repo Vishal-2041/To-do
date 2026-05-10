@@ -1,0 +1,202 @@
+:root {
+    --sidebar-bg: #252423; /* Darker charcoal blue */
+    --accent-blue: #0078d4;
+    --text-white: #ffffff;
+    --task-bg: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #edebe9;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: var(--sidebar-bg);
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    background: var(--accent-blue);
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-item {
+    padding: 12px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.nav-item:hover {
+    background: #3b3a39;
+}
+
+.nav-item.active {
+    background: #3b3a39;
+    border-left: 4px solid var(--accent-blue);
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* Main Content with Fixed Visibility */
+.main-content {
+    flex: 1;
+    padding: 60px;
+    /* This linear-gradient ensures text is ALWAYS visible over the image */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    color: white;
+    font-size: 36px;
+    margin: 0;
+    font-weight: 700;
+}
+
+header p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Better Input Bar */
+.input-section {
+    background: white; /* Solid white background for high visibility */
+    padding: 16px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#task-input {
+    border: none;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    color: #323130;
+}
+
+.plus-icon {
+    color: var(--accent-blue);
+    font-size: 24px;
+}
+
+/* Task Cards */
+.task-item {
+    background: white;
+    margin-bottom: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: scale(1.01);
+}
+
+.task-item span {
+    font-size: 16px;
+    color: #323130; /* Dark text for readability */
+}
+
+.circle-check {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8a8886;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+    color: #a19f9d;
+}
+
+.task-item.completed .circle-check {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    position: relative;
+}
+
+.task-item.completed .circle-check::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    left: 4px;
+    top: 1px;
+}
+
+.task-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.star-icon {
+    cursor: pointer;
+    color: #c8c6c4;
+    font-size: 20px;
+}
+
+.star-icon.active {
+    color: var(--accent-blue);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #c8c6c4;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.delete-btn:hover {
+    color: #d83b01;
+}
